@@ -13,7 +13,15 @@
             List<string> position = new List<string>();
             List<decimal> salary = new List<decimal>();
 
-
+            name.Add(GetName());
+            surname.Add(GetSurname());
+            fatherName.Add(GetFatherName());
+            age.Add(GetAge());
+            FIN.Add(GetFIN());
+            phoneNo.Add(GetPhoneNumber());
+            position.Add(GetPosition());
+            salary.Add(GetSalary());
+            Console.WriteLine($"Information added, {name[0]} {surname[0]}");
         }
         private static string GetName()
         {
