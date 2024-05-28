@@ -12,16 +12,44 @@
             List<string> phoneNo = new List<string>();
             List<string> position = new List<string>();
             List<decimal> salary = new List<decimal>();
-
-            name.Add(GetName());
-            surname.Add(GetSurname());
-            fatherName.Add(GetFatherName());
-            age.Add(GetAge());
-            FIN.Add(GetFIN());
-            phoneNo.Add(GetPhoneNumber());
-            position.Add(GetPosition());
-            salary.Add(GetSalary());
-            Console.WriteLine($"Information added, {name[0]} {surname[0]}");
+            while (true)
+            {
+                Console.WriteLine("-For adding new new employee enter 1");
+                Console.WriteLine("-For seeing informations about employees enter 2");
+                string option = Console.ReadLine();
+                if (option == "1")
+                {
+                    int i = 0;
+                    while (true)
+                    {
+                        name.Add(GetName());
+                        surname.Add(GetSurname());
+                        fatherName.Add(GetFatherName());
+                        age.Add(GetAge());
+                        FIN.Add(GetFIN());
+                        phoneNo.Add(GetPhoneNumber());
+                        position.Add(GetPosition());
+                        salary.Add(GetSalary());
+                        Console.WriteLine($"Information added, {name[i]} {surname[i]}");
+                        Console.WriteLine("To exit write /exit");
+                        option = Console.ReadLine();
+                        if (option == "/exit")
+                            break;
+                        i++;
+                    }
+                }
+                else if (option == "2")
+                {
+                    for (int i = 0; i < name.Count; i++)
+                    {
+                        Console.WriteLine($"{i + 1}.Full Name : {name[i]} {surname[i]} {fatherName[i]}, Age : {age[i]}, FIN : {FIN[i]}," +
+                            $" Phone number : {phoneNo[i]}, Position : {position[i]}, Salary : {salary[i]}");
+                    }
+                }
+                else
+                    Console.WriteLine("Please enter valid input");
+                Console.WriteLine("===============================================================================");
+            }
         }
         private static string GetName()
         {
